@@ -1,0 +1,49 @@
+:host {
+  & [part~="dialog"][open] {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    margin: auto;
+
+    @media (width > 22em) {
+      width: 24em;
+    }
+
+    & [part~="form"] {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      & slot[name="button"] {
+        display: flex;
+        gap: 0.5em;
+        justify-content: end;
+      }
+
+      & slot[name="header"] > * {
+        margin: 0;
+      }
+
+      & slot[name="header"]::slotted(*) {
+        margin: 0;
+      }
+
+      & [part~="fieldset"] {
+        padding: 0.5em 0;
+        border: 0;
+
+        & slot[name="input"] > * {
+          box-sizing: border-box;
+          width: 100%;
+        }
+
+        & slot[name="input"]::slotted(*) {
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

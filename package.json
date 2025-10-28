@@ -1,0 +1,50 @@
+{
+  "author": "Koen van den Boogaart <koen@genericmedia.nl>",
+  "bugs": "https://github.com/genericmedia24/interaction/issues",
+  "description": "Interaction Management",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "eslint": "^9.39.1",
+    "rollup": "^4.53.1",
+    "semantic-release": "^25.0.2",
+    "stylelint": "^16.25.0",
+    "typescript": "^5.9.3"
+  },
+  "exports": {
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "./LICENSE",
+    "./README.md",
+    "./dist"
+  ],
+  "homepage": "https://github.com/genericmedia24/interaction#readme",
+  "keywords": [
+    "interaction",
+    "dialog",
+    "popover",
+    "alert",
+    "confirm",
+    "prompt",
+    "notification"
+  ],
+  "license": "MIT",
+  "name": "@genericmedia/interaction",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genericmedia24/interaction.git"
+  },
+  "scripts": {
+    "init": "git config core.hooksPath .githooks",
+    "lint": "tsc && eslint src/**/*.html src/**/*.ts *.mjs && stylelint src/**/*.css",
+    "make": "rollup -c",
+    "test": "exit 0"
+  },
+  "version": "0.0.0"
+}

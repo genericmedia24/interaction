@@ -1,0 +1,7 @@
+{
+  "extends": "@genericmedia/config/tsconfig.json",
+  "include": [
+    "**/*.ts",
+    "*.mjs"
+  ],
+}

@@ -1,0 +1,25 @@
+name: release
+on:
+  push:
+    branches:
+      - beta
+      - main
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+      - run: npm ci --include=dev
+      - run: npm run lint
+      - run: npm test
+      - run: npm make
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

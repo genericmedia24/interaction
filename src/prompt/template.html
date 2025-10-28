@@ -1,0 +1,19 @@
+<dialog part="dialog" role="alertdialog">
+  <form part="form" role="presentation">
+    <slot name="header" part="header">
+      <h2></h2>
+    </slot>
+    <slot name="message" part="message">
+      <div></div>
+    </slot>
+    <fieldset part="fieldset">
+      <slot name="input" part="input">
+        <input type="text" name="value" part="value">
+      </slot>
+    </fieldset>
+    <slot name="button" part="button">
+      <button type="button" part="cancel"></button>
+      <button type="submit" part="ok"></button>
+    </slot>
+  </form>
+</dialog>

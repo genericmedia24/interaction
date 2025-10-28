@@ -1,0 +1,59 @@
+:host {
+  & [part~="popover"] {
+    position: absolute;
+    inset: auto 1em 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    width: auto;
+    padding: 1em;
+
+    @media (width > 30em) {
+      inset-inline-start: auto;
+      width: 32em;
+    }
+
+    & slot[name="message"] {
+      display: flex;
+      flex: 1;
+      flex-flow: row wrap;
+      gap: 0.5em;
+      align-items: center;
+      justify-content: space-between;
+
+      & div {
+        display: contents;
+      }
+    }
+
+    & slot[name="button"]:not(:empty) {
+      display: flex;
+      gap: 0.25em;
+    }
+
+    & slot[name="button"] > * {
+      position: relative;
+      width: 2em;
+      height: 2em;
+
+      &[part~="close"] {
+        &::after {
+          position: absolute;
+          inset: 0;
+          content: "";
+          background-color: currentcolor;
+          mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M7 7L21 21M7 21L21 7' fill='none' stroke='currentColor' stroke-width='2'/></svg>");
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: 1.5em;
+        }
+      }
+    }
+
+    & slot[name="button"]::slotted(*) {
+      position: relative;
+      width: 2em;
+      height: 2em;
+    }
+  }
+}
